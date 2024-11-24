@@ -18,21 +18,22 @@ _js = ScriptX('card3d.js')
 # https://codepen.io/markmiro/pen/wbqMPa
 
 
-def card_3d(text, bg_img, amt=1):
+def card_3d(text, bg_img, id):
     return Div(
         text,
         Div(cls='glow'),
-        Style(".card {background: url("+bg_img+");}"),
+        Style("#"+id+" { background-image: url("+bg_img+"); }"),
         cls='card',
+        id=id
     )
 
-folder_url = "https://github.com/Santiago-R/extinction_adventure/imgs/"
+img_urls = "https://raw.githubusercontent.com/Santiago-R/extinction_adventure/refs/heads/main/imgs/_{name}.png"
 
 def make_cards():
     card_div_list = []
-    for info in info_list: 
-        # card = card_3d(text=info["name"], bg_img=f'imgs/_{info["name"]}.png')
-        card = card_3d(text=info["name"], bg_img=f'{folder_url}_{info["name"]}.png')
+    for i, info in enumerate(info_list):
+        url = img_urls.format(name=info["name"].replace(' ', '%20'))
+        card = card_3d(text=info["name"], bg_img=url, id=f'card_{i}')
         card_div_list.append(Div(card, cls="card-container col-12 col-md-6 col-lg-4"))
         # card_div_list.append(card)
     return card_div_list
