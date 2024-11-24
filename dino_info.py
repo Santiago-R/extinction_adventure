@@ -16,7 +16,7 @@ info_list = [
     {'name': 'Microraptor', 'incubation': 1, 'ecosystem': ['jungla', 'desierto'], 'description': 'Invulnerable a la extinción automática en el desierto (no protege a otros).'},
     {'name': 'Minmi', 'incubation': 1, 'ecosystem': ['desierto'], 'description': 'Al final de la ronda, puede migrar al origen de otra migración ocurrida este turno.'},
     {'name': 'Camarasauro', 'incubation': 7, 'ecosystem': ['hielo'], 'description': 'Elimina la extinción automática en el hielo.'},
-    {'name': 'Composagnathus', 'incubation': 1, 'ecosystem': ['volcán', 'desierto'], 'description': 'Puede migrar al final de la ronda, si intercambia su posición con un huevo de dinosaurio.'},
+    {'name': 'Compsognathus', 'incubation': 1, 'ecosystem': ['volcán', 'desierto'], 'description': 'Puede migrar al final de la ronda, si intercambia su posición con un huevo de dinosaurio.'},
     {'name': 'Paquicefalosaurio', 'incubation': 3, 'ecosystem': ['jungla'], 'description': 'Ladrón de huevos. Puede migrar al final de la ronda, si lleva con él al menos dos huevos de su ecosistema al ecosistema de destino.  Su extinción protege a todos los huevos de su ecosistema hasta la siguiente ronda.'},
     {'name': 'Estegosaurio naranja', 'incubation': 5, 'ecosystem': ['jungla', 'volcán'], 'description': 'Permite poner huevos naturales de la jungla en el volcán.'},
     {'name': 'Estegosaurio violeta', 'incubation': 5, 'ecosystem': ['jungla', 'hielo'], 'description': 'Permite poner huevos naturales de la jungla en el hielo.'},
