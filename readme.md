@@ -5,7 +5,7 @@
 #### Tablero:
 > cuatro cuadrantes, cada uno con un ecosistema - Desierto, Jungla, Volcán, Hielo.
 
-![board](board.jpg)
+![board](imgs/board.jpg)
 
 #### Cómo se juega:
 Se juega con una baraja de cartas de dinosaurios y una baraja de cartas de eventos.  
