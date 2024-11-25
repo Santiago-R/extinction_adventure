@@ -44,7 +44,7 @@ Los jugadores empiezan sin cartas. En su turno, roban una carta y pueden jugar l
 - (x2) Epigenética: Sin alterar su orden, desvela las tres siguientes cartas de evento. Los jugadores pueden desvelar sus cartas y discutir estrategias.
 - (x5) Superviviente: La partida no puede terminar esta ronda. Juega la siguiente carta de evento de la baraja, pero continúa jugando aunque todos los dinosaurios se extingan y todos los huevos se pierdan.
 
-#### Cartas de dinosaurio:  
+#### Cartas de dinosaurios fantásticos:  
   
 **Plesiosaurio**:  
 Incubación: 5  
