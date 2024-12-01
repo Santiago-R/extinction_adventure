@@ -58,7 +58,8 @@ Acuático. Elimina la extinción automática en el desierto cada ronda.
   
 **Maiasaura**:  
 Incubación: 3  
-Ecosistemas: 'jungla'], 'description':  'Protege todos los huevos del tablero. Permite eclosionar huevos una ronda antes de tiempo.  
+Ecosistemas: 'jungla'
+Protege todos los huevos del tablero. Permite eclosionar huevos una ronda antes de tiempo.  
   
 **Anquilosaurio**:  
 Incubación: 5  
