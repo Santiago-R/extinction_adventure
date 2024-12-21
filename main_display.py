@@ -21,31 +21,36 @@ def emoji_favicon(emoji):
 _css = StyleX('card3d.css')#, background_image=f'url({bg_img})', align='left')
 _js = ScriptX('card3d.js')
 
-# https://codepen.io/markmiro/pen/wbqMPa
+img_urls = "https://raw.githubusercontent.com/Santiago-R/extinction_adventure/refs/heads/main/imgs/_{name}.png"
 
-
-def card_3d(text, img_url, ecos, id):
+def card_3d(info, id):
+    # https://codepen.io/markmiro/pen/wbqMPa
+    img_url = img_urls.format(name=info["name"].replace(' ', '%20'))
     return Div(
-        text,
+        H4(info["name"] + '  🥚' + str(info["incubation"])),
+        P(info["description"]),
         Div(cls='glow'),
         # Style("#"+id+" { background-image: url("+img_url+"); }"),
         Style(f"""#{id} {{
             border: 15px solid transparent;
-            border-image: linear-gradient(to right, {colors[ecos[0]]}, {colors[ecos[-1]]}) 1;
-            background-image: url('{img_url}');
+            border-image: linear-gradient(to right, {colors[info['ecosystem'][0]]}, {colors[info['ecosystem'][-1]]}) 1;
+            background: 
+                url('{img_url}') top center no-repeat,
+                #FFFFFF;
+            background-size: 320px 320px;
+            padding: 330px 15px 15px 15px;
         }}"""),
+            # box-sizing: border-box;
 
         cls='card',
         id=id
     )
 
-img_urls = "https://raw.githubusercontent.com/Santiago-R/extinction_adventure/refs/heads/main/imgs/_{name}.png"
 
 def make_cards():
     card_div_list = []
     for i, info in enumerate(info_list):
-        url = img_urls.format(name=info["name"].replace(' ', '%20'))
-        card = card_3d(text=info["name"], img_url=url, ecos=info['ecosystem'], id=f'card_{i}')
+        card = card_3d(info=info, id=f'card_{i}')
         card_div_list.append(Div(card, cls="card-container col-12 col-md-6 col-lg-4"))
         # card_div_list.append(card)
     return card_div_list
