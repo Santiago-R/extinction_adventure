@@ -14,6 +14,8 @@ URL_IMGS = "https://raw.githubusercontent.com/Santiago-R/extinction_adventure/re
 def emoji_favicon(emoji):
     return Link(rel="icon", href=f"""data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{emoji}</text></svg>""")
 
+def img_prefetch(url): return Link(rel="prefetch", href=url)
+
 def card_3d(info, id):
     # https://codepen.io/markmiro/pen/wbqMPa
     img_url = URL_IMGS.format(name=info["name"].replace(' ', '%20'))
@@ -37,31 +39,31 @@ def card_3d(info, id):
         cls="card-container col-12 col-md-6 col-lg-4"
     )
 
-# def make_deck():
-#     deck = []
-#     for i, info in enumerate(info_list):
-#         card = card_3d(info=info, id=f'card_{i}')
-#         # deck.append(Div(card, cls="card-container col-12 col-md-6 col-lg-4"))
-#         # card_div_list.append(card)
-#     return deck
-
 class Deck:
-    "Replaces make_deck, adds shuffle functionality"
     def __init__(self, shuffle=True):
         self.deck = []
+        self.urls = []
         for i, info in enumerate(info_list):
             self.deck.append(card_3d(info=info, id=f'card_{i}'))
+            self.urls.append(URL_IMGS.format(name=info["name"].replace(' ', '%20')))
         if shuffle: random.shuffle(self.deck)
         self.stack = []
+
     def shuffle(self):
         random.shuffle(self.deck)
-    def pop(self, n=1):
-        for _ in range(n): self.stack.append(self.deck.pop())
-        return self.stack
-    def reorder_stack(self, idxs):
+
+    def pop(self, i=-1):
+        self.stack.append(self.deck.pop(i))
+
+    def stack_reorder(self, idxs):
         self.stack = [self.stack[i] for i in idxs]
-    def push(self):
+
+    def stack_to_bottom(self):
         self.deck = self.stack + self.deck
+        self.stack = []
+
+    def stack_to_front(self):
+        self.deck = self.deck + self.stack
         self.stack = []
     
     def __iter__(self): return iter(self.deck)
