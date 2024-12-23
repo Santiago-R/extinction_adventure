@@ -1,5 +1,7 @@
 # >> uvicorn main_v0:app
 
+# WIP: Go through shuffled decks, to play the game!
+
 print('------------- Starting server -------------')
 from fasthtml.common import *
 from components import emoji_favicon, Deck
@@ -11,11 +13,10 @@ boots_link = Link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist
 app = FastHTMLWithLiveReload(hdrs=[boots_link, emoji_favicon("🦖"), _css])
 
 @app.get("/")
-async def show_cards():
-    deck = Deck(shuffle=False)
-    first_element = Div(H1("🦕", style="font-size: 250px; text-align: center;"), cls="col-12 col-md-6 col-lg-4")
-    boots_grid = Div(Div(first_element, *deck, cls="row"), cls="container")
-    # header = H1("Dinosaurios!")
+async def handle_deck():
+    deck = Deck(shuffle=True)
+    deck.pop()
+    boots_grid = Div(Div(*deck.stack, cls="row"), cls="container")
     return Title('Dinosaurios'), Main(boots_grid, _js)
 
 serve()
