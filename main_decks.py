@@ -32,3 +32,4 @@ async def next_card():
     return Div(*deck.stack, cls="row")
 
 serve()
+º

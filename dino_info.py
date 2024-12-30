@@ -1,4 +1,4 @@
-info_list = [
+dino_info = [
     {'name': 'Plesiosaurio', 'incubation': 5, 'ecosystem': ['jungla', 'hielo'], 'description': 'Acuático. El jugador que juega la carta de Plesiosaurio puede mostrar sus cartas al resto de jugadores.'},
     {'name': 'Plesiosaurio del oasis', 'incubation': 5, 'ecosystem': ['desierto'], 'description': 'Acuático. Elimina la extinción automática en el desierto cada ronda.'},
     {'name': 'Maiasaura', 'incubation': 3, 'ecosystem': ['jungla'], 'description':  'Protege todos los huevos del tablero. Permite eclosionar huevos una ronda antes de tiempo.'},

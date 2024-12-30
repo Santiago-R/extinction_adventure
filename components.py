@@ -1,5 +1,5 @@
 from fasthtml.common import *
-from dino_info import info_list
+from dino_info import dino_info
 import random
 
 
@@ -43,7 +43,7 @@ class Deck:
     def __init__(self, shuffle=True):
         self.deck = []
         self.urls = []
-        for i, info in enumerate(info_list):
+        for i, info in enumerate(dino_info):
             self.deck.append(card_3d(info=info, id=f'card_{i}'))
             self.urls.append(URL_IMGS.format(name=info["name"].replace(' ', '%20')))
         if shuffle: random.shuffle(self.deck)
