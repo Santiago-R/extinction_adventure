@@ -1,5 +1,4 @@
 from fasthtml.common import *
-from dino_info import dino_info
 import random
 
 
@@ -7,7 +6,7 @@ COLORS = {
     'desierto': '#C29710',
     'hielo': '#FFFFFF',
     'jungla': '#436B24',
-    'volcán': '#91191B'
+    'volcán': '#91191B',
 }
 URL_IMGS = "https://raw.githubusercontent.com/Santiago-R/extinction_adventure/refs/heads/main/imgs/_{name}.png"
 
@@ -19,15 +18,18 @@ def img_prefetch(url): return Link(rel="prefetch", href=url)
 def card_3d(info, id):
     # https://codepen.io/markmiro/pen/wbqMPa
     img_url = URL_IMGS.format(name=info["name"].replace(' ', '%20'))
+    title = info["name"] + (('  🥚' + str(info["incubation"])) if 'incubation' in info.keys() else '')
+    c_left = COLORS[info['ecosystem'][0]] if 'ecosystem' in info.keys() else '#000000'
+    c_right = COLORS[info['ecosystem'][-1]] if 'ecosystem' in info.keys() else '#000000'
     return Div(
         Div(
-            H4(info["name"] + '  🥚' + str(info["incubation"])),
+            H4(title),
             P(info["description"]),
             Div(cls='glow'),
             # Style("#"+id+" { background-image: url("+img_url+"); }"),
             Style(f"""#{id} {{
                 border: 15px solid transparent;
-                border-image: linear-gradient(to right, {COLORS[info['ecosystem'][0]]}, {COLORS[info['ecosystem'][-1]]}) 1;
+                border-image: linear-gradient(to right, {c_left}, {c_right}) 1;
                 background: url('{img_url}') top center no-repeat, #FFFFFF;
                 background-size: 320px 320px;
                 padding: 330px 15px 15px 15px;
@@ -39,13 +41,15 @@ def card_3d(info, id):
         cls="card-container col-12 col-md-6 col-lg-4"
     )
 
+
 class Deck:
-    def __init__(self, shuffle=True):
+    def __init__(self, deck_info, shuffle=True):
         self.deck = []
-        self.urls = []
-        for i, info in enumerate(dino_info):
+        # self.urls = []
+        for i, info in enumerate(deck_info):
             self.deck.append(card_3d(info=info, id=f'card_{i}'))
-            self.urls.append(URL_IMGS.format(name=info["name"].replace(' ', '%20')))
+            # self.urls.append(URL_IMGS.format(name=info["name"].replace(' ', '%20')))
+
         if shuffle: random.shuffle(self.deck)
         self.stack = []
 

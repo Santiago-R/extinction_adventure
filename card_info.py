@@ -1,3 +1,21 @@
+# TODO: Use 'number', or create many more event cards?
+
+event_info = [
+    {'name': 'Migración masiva', 'number': 3, 'description': 'Los jugadores pueden mover cualquier dinosaurio a cualquier ecosistema.'},
+    {'name': 'Meteorito', 'number': 2, 'description': 'Se extinguen todos los dinosaurios excepto los voladores y los acuáticos.'},
+    {'name': 'Edad de hielo', 'number': 3, 'description': 'Se extinguen todos los dinosaurios que no tienen el hielo como ecosistema. Se pierden los huevos con más de dos rondas de incubación pendiente.'},
+    {'name': 'Sequía', 'number': 3, 'description': 'Se extinguen todos los dinosaurios que no tienen el desierto como ecosistema. Se pierden los huevos a punto de eclosionar.'},
+    {'name': 'Explosión cámbrica', 'number': 5, 'description': 'Todos los jugadores roban una carta de dinosaurio.'},
+    {'name': 'Incendio', 'number': 5, 'description': 'Se extinguen todos los dinosaurios de la jungla excepto los acuáticos. Se pierden todos los huevos de la jungla excepto los acuáticos.'},
+    {'name': 'Erupción volcánica', 'number': 5, 'description': 'Se extinguen todos los dinosaurios del volcán excepto los acuáticos. Se pierden todos los huevos del volcán.'},
+    {'name': 'Sobrepoblación', 'number': 3, 'description': 'Se extinguen todos los dinosaurios del ecosistema con más dinosaurios.'},
+    {'name': 'Escasez', 'number': 3, 'description': 'Se extinguen tres dinosaurios en la jungla y un dinosaurio del resto de ecosistemas.'},
+    {'name': 'Plaga', 'number': 3, 'description': 'Se extinguen todos los dinosaurios acuáticos y voladores. Se extingue al menos un dinosaurio de cada ecosistema.'},
+    {'name': 'Terremoto', 'number': 5, 'description': 'Todos los huevos se pierden. Todos los dinosaurios deben migrar a un ecosistema adyacente.'},
+    {'name': 'Epigenética', 'number': 2, 'description': 'Sin alterar su orden, desvela las tres siguientes cartas de evento. Los jugadores pueden desvelar sus cartas y discutir estrategias.'},
+    {'name': 'Superviviente', 'number': 5, 'description': 'La partida no puede terminar esta ronda. Continúa jugando aunque todos los dinosaurios se extingan y todos los huevos se pierdan esta ronda. Juega una carta de evento más.'},
+]
+
 dino_info = [
     {'name': 'Plesiosaurio', 'incubation': 5, 'ecosystem': ['jungla', 'hielo'], 'description': 'Acuático. El jugador que juega la carta de Plesiosaurio puede mostrar sus cartas al resto de jugadores.'},
     {'name': 'Plesiosaurio del oasis', 'incubation': 5, 'ecosystem': ['desierto'], 'description': 'Acuático. Elimina la extinción automática en el desierto cada ronda.'},

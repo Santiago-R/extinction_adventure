@@ -38,7 +38,7 @@ Los jugadores empiezan sin cartas. En su turno, el jugador roba una carta (dos c
 - (x5) Incendio: Se extinguen todos los dinosaurios de la jungla excepto los acuáticos. Se pierden todos los huevos de la jungla excepto los acuáticos.
 - (x5) Erupción volcánica: Se extinguen todos los dinosaurios del volcán excepto los acuáticos. Se pierden todos los huevos del volcán.
 - (x3) Sobrepoblación: Se extinguen todos los dinosaurios del ecosistema con más dinosaurios.
-- (x3) Se extinguen tres dinosaurios en la jungla.
+- (x3) Escasez: Se extinguen tres dinosaurios en la jungla y un dinosaurio del resto de ecosistemas.
 - (x3) Plaga: Se extinguen todos los dinosaurios acuáticos y voladores. Se extingue al menos un dinosaurio de cada ecosistema.
 - (x5) Terremoto: Todos los huevos se pierden. Todos los dinosaurios deben migrar a un ecosistema adyacente.
 - (x2) Epigenética: Sin alterar su orden, desvela las tres siguientes cartas de evento. Los jugadores pueden desvelar sus cartas y discutir estrategias.
