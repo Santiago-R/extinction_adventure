@@ -14,6 +14,9 @@ event_info = [
     {'name': 'Terremoto', 'number': 5, 'description': 'Todos los huevos se pierden. Todos los dinosaurios deben migrar a un ecosistema adyacente.'},
     {'name': 'Epigenética', 'number': 2, 'description': 'Sin alterar su orden, desvela las tres siguientes cartas de evento. Los jugadores pueden desvelar sus cartas y discutir estrategias.'},
     {'name': 'Superviviente', 'number': 5, 'description': 'La partida no puede terminar esta ronda. Continúa jugando aunque todos los dinosaurios se extingan y todos los huevos se pierdan esta ronda. Juega una carta de evento más.'},
+    {'name': 'Tsunami', 'number': 2, 'description': 'Se extinguen todos los dinosaurios de la jungla y del volcán, excepto los acuáticos y los voladores. Se pierden todos los huevos de la jungla y del volcán.'},
+    {'name': 'Huracán', 'number': 2, 'description': 'Se extinguen todos los dinosaurios de la jungla. Se pierden los huevos a punto de eclosionar en cualquier ecosistema.'},
+    
 ]
 
 dino_info = [
